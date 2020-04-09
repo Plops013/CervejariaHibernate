@@ -19,6 +19,7 @@ public class ExecutaTeste {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
+	Long inicio = System.currentTimeMillis();
 	
 	GenericDao dao;
 		
@@ -32,7 +33,7 @@ public class ExecutaTeste {
 	dao.persistir(grupo);
 	
 	//USUARIO
-	Usuario user = new Usuario("Fabio Lopes", "fabio.lopes@qintess.com", "KsmRD9bWE@MVSyq", (short) 1, Date.valueOf(LocalDate.now()));
+	Usuario user = new Usuario("Fabio Lopes", "fabio.lopes@qintess.com", "KsmRD9bWE@MVSyq", (short) 60, Date.valueOf(LocalDate.now()));
 	dao = new GenericDao<Usuario, Integer>();
 	user.addGrupo(grupo);
 	dao.persistir(user);
@@ -82,5 +83,7 @@ public class ExecutaTeste {
 	venda.setCliente(cliente);
 	venda.setUsuario(user);
 	dao.persistir(venda);
+	Long finish = System.currentTimeMillis();
+	System.out.println(finish - inicio);
 	}
 }

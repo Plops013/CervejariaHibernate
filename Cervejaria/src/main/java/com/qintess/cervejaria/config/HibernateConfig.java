@@ -39,7 +39,7 @@ public class HibernateConfig {
 				prop.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL95Dialect");
 				prop.put(Environment.SHOW_SQL, "true");
 				//Principalmente nessa linha que pode F#der tudo.
-				prop.put(Environment.HBM2DDL_AUTO, "create-drop");
+				prop.put(Environment.HBM2DDL_AUTO, "update");
 
 				configuration.setProperties(prop);
 

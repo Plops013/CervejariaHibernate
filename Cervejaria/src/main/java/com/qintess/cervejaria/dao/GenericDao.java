@@ -71,7 +71,6 @@ public class GenericDao<T, ID extends Serializable> {
 			e.printStackTrace();
 			return null;
 		}
-		
 	}
 	
 	public void deletar(T entity) {
